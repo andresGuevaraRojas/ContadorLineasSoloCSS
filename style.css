@@ -1,0 +1,43 @@
+body
+{
+    counter-reset:contador;
+}
+h1{
+    text-align: center;
+}
+/* Aquí insertaremos las nuevas lineas */
+pre{            
+    background-color: #2F3336;    
+    color: deepskyblue;   
+    width: 50%;        
+    height: 50vh;    
+    margin: auto;        
+    font-size: 18px;                
+}
+/* Por cada nuevo div insertado en la etiqueta pre
+    se incrementa en uno
+*/
+pre>div
+{
+    counter-increment:contador;
+}
+/* Muestra el número de linea cuando no hay
+ divs dentro de la etiqueta pre
+*/
+pre::before
+{    
+    content:counter(contador);           
+    margin-right: 20px;
+    margin-left: 10px;                                         
+    color: white;
+}
+
+/* Muestra el número de linea */
+pre>div::before
+{
+    content:counter(contador);       
+    margin-right: 20px;
+    margin-left: 10px; 
+    color: white;                        
+}
+             
